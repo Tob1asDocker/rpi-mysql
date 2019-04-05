@@ -1,9 +1,9 @@
 FROM balenalib/rpi-raspbian:stretch
 
-LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
+LABEL org.opencontainers.image.authors="Docker * Authors, Tobias Hargesheimer <docker@ison.ws>" \
 	org.opencontainers.image.title="MySQL" \
 	org.opencontainers.image.description="Debian 9 Stretch with MySQL (5.5) on arm arch" \
-	org.opencontainers.image.licenses="Apache-2.0" \
+	org.opencontainers.image.licenses="GPL-2.0" \
 	org.opencontainers.image.url="https://hub.docker.com/r/tobi312/rpi-mysql" \
 	org.opencontainers.image.source="https://github.com/Tob1asDocker/rpi-mysql"
 
