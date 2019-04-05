@@ -1,7 +1,16 @@
-#FROM balenalib/rpi-raspbian:jessie
-FROM jsurf/rpi-raspbian:latest
+FROM balenalib/rpi-raspbian:stretch
 
-RUN [ "cross-build-start" ]
+LABEL org.opencontainers.image.authors="Tobias Hargesheimer <docker@ison.ws>" \
+	org.opencontainers.image.title="MySQL" \
+	org.opencontainers.image.description="Debian 9 Stretch with MySQL (5.5) on arm arch" \
+	org.opencontainers.image.licenses="Apache-2.0" \
+	org.opencontainers.image.url="https://hub.docker.com/r/tobi312/rpi-mysql" \
+	org.opencontainers.image.source="https://github.com/Tob1asDocker/rpi-mysql"
+
+ARG CROSS_BUILD_START=":"
+ARG CROSS_BUILD_END=":"
+
+RUN [ ${CROSS_BUILD_START} ]
 
 ENV LANG C.UTF-8
 ENV TZ Europe/Berlin
@@ -53,11 +62,9 @@ RUN { \
 RUN sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/my.cnf \
 	&& echo '[mysqld]\nskip-host-cache\nskip-name-resolve' > /etc/mysql/conf.d/docker.cnf
 
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY docker-entrypoint-stretch-5_5.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-
-RUN [ "cross-build-end" ]
 
 VOLUME /var/lib/mysql
 
@@ -65,3 +72,5 @@ ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 3306
 CMD ["mysqld"]
+
+RUN [ ${CROSS_BUILD_END} ]
