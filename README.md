@@ -1,6 +1,6 @@
-# MySQL on Raspberry Pi / armhf
+# MySQL on Raspberry Pi / ARM
 
-This is a port of the official MySQL image https://hub.docker.com/_/mysql/ for Raspberry Pi / armhf.
+This is a port of the official MySQL image https://hub.docker.com/_/mysql/ for Raspberry Pi / ARM.
 
 ### Supported tags and respective `Dockerfile` links
 -	[`5.5`, `latest` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-mysql/blob/master/stretch.armhf.5_5.Dockerfile)
