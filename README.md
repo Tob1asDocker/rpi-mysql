@@ -1,12 +1,18 @@
 # MySQL on Raspberry Pi / ARM
 
+### NOT MAINTAINED AND DEPRECATED
+
+This image is not maintained and is deprecated!  
+  
+Please use the following alternative images:
+
+* my MariaDB-Images ([DockerHub](https://hub.docker.com/r/tobi312/rpi-mariadb)/[GitHub](https://www.github.com/Tob1asDocker/rpi-mariadb)), a port of the official MariaDB-Images. MariaDB is a fork of MySQL.
+* [webhippie/mariadb](https://hub.docker.com/r/webhippie/mariadb)-Images
+* [clover/mysqld](https://hub.docker.com/r/clover/mysqld)-Image
+
+---
+
 This is a port of the official MySQL image https://hub.docker.com/_/mysql/ for Raspberry Pi / ARM.
-
-# DEPRECATED !!
-
-Deprecated and no longer maintained, use: https://hub.docker.com/r/tobi312/rpi-mariadb or on [GitHub](https://github.com/Tob1asDocker/rpi-mariadb) !
-
-# DEPRECATED !!
 
 ### Supported tags and respective `Dockerfile` links
 -	[`5.5`, `latest` (*Dockerfile*)](https://github.com/TobiasH87Docker/rpi-mysql/blob/master/stretch.armhf.5_5.Dockerfile)
